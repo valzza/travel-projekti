@@ -12,25 +12,25 @@ class Config
      * Database host
      * @var string
      */
-    const DB_DRIVER = '';
+    const DB_DRIVER = 'mysql';
 
     /**
      * Database host
      * @var string
      */
-    const DB_HOST = '';
+    const DB_HOST = 'localhost'; //127.0.0.1
 
     /**
      * Database name
      * @var string
      */
-    const DB_NAME = '';
+    const DB_NAME = 'travel';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = '';
+    const DB_USER = 'root';
 
     /**
      * Database password
