@@ -32,6 +32,13 @@ $router->add('proporties-edit', ['controller' => 'ProportiesController', 'action
 $router->add('proporties-update', ['controller' => 'ProportiesController', 'action' => 'update']);
 $router->add('proporties-delete', ['controller' => 'ProportiesController', 'action' => 'destroy']);
 
+$router->add('bookings', ['controller' => 'BookingController', 'action' => 'index']);
+$router->add('bookings-create', ['controller' => 'BookingController', 'action' => 'create']);
+$router->add('bookings-store', ['controller' => 'BookingController', 'action' => 'store']);
+$router->add('bookings-edit', ['controller' => 'BookingController', 'action' => 'edit']);
+$router->add('bookings-update', ['controller' => 'BookingController', 'action' => 'update']);
+$router->add('bookings-delete', ['controller' => 'BookingController', 'action' => 'destroy']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);
 
