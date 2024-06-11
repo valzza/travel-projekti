@@ -6,7 +6,7 @@
 $router = new Core\Router();
 
 // Add the routes
-$router->add('', ['controller' => 'Home', 'action' => 'index']);
+$router->add('', ['controller' => 'HomeController', 'action' => 'index']);
 
 $router->add('categories', ['controller' => 'CategoryController', 'action' => 'index']);
 $router->add('categories-create', ['controller' => 'CategoryController', 'action' => 'create']);

@@ -1,13 +1,13 @@
 {% extends "layout/appLayout.html" %}
 
-{% block title %}Library | Categories{% endblock %}
+{% block title %}Library | Users{% endblock %}
 
 {% block content %}
 <main>
     <div class="container-fluid">
-        <h1 class="mt-4">Categories</h1>
+        <h1 class="mt-4">Users</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Categories</li>
+            <li class="breadcrumb-item active">Users</li>
         </ol>
 
         <div class="row">
@@ -22,11 +22,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for category in categories %}
+                        {% for user in users %}
                         <tr>
-                            <td>{{ category.name }}</td>
-                            <td><a href="/categories-edit?id={{category.id}}">Edit</a></td>
-                            <td><a href="/categories-delete?id={{category.id}}">Delete</a></td>
+                            <td>{{ user.name }}</td>
+                            <td><a href="/users-edit?id={{user.id}}">Edit</a></td>
+                            <td><a href="/users-delete?id={{user.id}}">Delete</a></td>
                         </tr>
                         {% endfor %}
                         </tbody>
