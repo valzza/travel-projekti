@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 Capsule::schema()->create('bookings', function ($table) {
     $table->id();
-    $table->integer('client_id');
+    $table->integer('user_id');
     $table->string('where_to', 30);
     $table->string('how_many', 30);
     $table->datetime('check_in');

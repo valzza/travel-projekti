@@ -8,7 +8,7 @@ use \Core\Controller;
 /**
  * Home controller
  */
-class Home extends Controller
+class HomeController extends Controller
 {
 
     /**
@@ -19,5 +19,9 @@ class Home extends Controller
     public function index()
     {
         View::renderTemplate('Dashboard/index.html');
+    }
+    public function index_home()
+    {
+        View::renderTemplate('layout/index.html');
     }
 }
