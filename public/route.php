@@ -15,6 +15,13 @@ $router->add('categories-edit', ['controller' => 'CategoryController', 'action' 
 $router->add('categories-update', ['controller' => 'CategoryController', 'action' => 'update']);
 $router->add('categories-delete', ['controller' => 'CategoryController', 'action' => 'destroy']);
 
+$router->add('users', ['controller' => 'UserController', 'action' => 'index']);
+$router->add('users-create', ['controller' => 'UserController', 'action' => 'create']);
+$router->add('users-store', ['controller' => 'UserController', 'action' => 'store']);
+$router->add('users-edit', ['controller' => 'UserController', 'action' => 'edit']);
+$router->add('users-update', ['controller' => 'UserController', 'action' => 'update']);
+$router->add('users-delete', ['controller' => 'UserController', 'action' => 'destroy']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);
 
