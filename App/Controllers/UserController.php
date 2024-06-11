@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
 use \Core\View;
 use \Core\Controller;
 
@@ -26,7 +27,13 @@ class UserController extends Controller
     public function store()
     {
         $user = new User();
-        $user->name = $_POST['name'];
+        $user->first_name = $_POST['first_name'];
+        $user->last_name = $_POST['last_name'];
+        $user->address = $_POST['address'];
+        $user->phone = $_POST['phone'];
+        $user->status = $_POST['status'];
+        $user->email = $_POST['email'];
+        $user->password = $_POST['password'];
         $user->save();
         header("Location: /users");
     }
@@ -41,14 +48,19 @@ class UserController extends Controller
         $id = $_GET['id'];
         $user = User::findOrFail($id);
 
-        View::renderTemplate('User/edit.html',['user' => $user]);
+        View::renderTemplate('Users/edit.html',['user' => $user]);
     }
 
     public function update()
     {
         $id = $_POST['id'];
         $user = User::findOrFail($id);
-        $user->name = $_POST['name'];
+        $user->first_name = $_POST['first_name'];
+        $user->last_name = $_POST['last_name'];
+        $user->address = $_POST['address'];
+        $user->phone = $_POST['phone'];
+        $user->status = $_POST['status'];
+        $user->email = $_POST['email'];
         $user->save();
         header("Location: /users");
     }
