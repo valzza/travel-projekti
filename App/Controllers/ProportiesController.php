@@ -7,7 +7,7 @@ use \Core\View;
 use \Core\Controller;
 
 /**
- * Home controller
+ * Proporties controller
  */
 class ProportiesController extends Controller
 {

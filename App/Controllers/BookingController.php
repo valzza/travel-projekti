@@ -2,34 +2,37 @@
 
 namespace App\Controllers;
 
-use App\Models\Category;
+use App\Models\Booking;
 use \Core\View;
 use \Core\Controller;
 
 /**
- * Home controller
+ * Booking controller
  */
-class CategoryController extends Controller
+class BookingController extends Controller
 {
 
     public function index()
     {
-        $categories = Category::orderBy('id', 'desc')->get();
+        $bookings = Booking::orderBy('id', 'desc')->get();
 
-        View::renderTemplate('Categories/index.html', ['categories' => $categories]);
+        View::renderTemplate('Bookings/index.html', ['bookings' => $bookings]);
     }
 
     public function create()
     {
-        View::renderTemplate('Categories/create.html');
+        View::renderTemplate('Bookings/create.html');
     }
 
     public function store()
     {
-        $category = new Category();
-        $category->name = $_POST['name'];
-        $category->save();
-        header("Location: /categories");
+        $bookings = new Booking();
+        $bookings->where_to = $_POST['where_to'];
+        $bookings->how_many = $_POST['how_many'];
+        $bookings->check_in = $_POST['check_in'];
+        $bookings->check_out = $_POST['check_out'];
+        $bookings->save();
+        header("Location: /bookings");
     }
 
     public function show()
@@ -40,26 +43,26 @@ class CategoryController extends Controller
     public function edit()
     {
         $id = $_GET['id'];
-        $category = Category::findOrFail($id);
+        $bookings = Booking::findOrFail($id);
 
-        View::renderTemplate('Categories/edit.html',['category' => $category]);
+        View::renderTemplate('Bookings/edit.html',['booking' => $booking]);
     }
 
     public function update()
     {
         $id = $_POST['id'];
-        $category = Category::findOrFail($id);
-        $category->name = $_POST['name'];
-        $category->save();
-        header("Location: /categories");
+        $booking = Booking::findOrFail($id);
+        $booking->name = $_POST['name'];
+        $booking->save();
+        header("Location: /bookings");
     }
 
     public function destroy()
     {
         $id = $_GET['id'];
-        $category = Category::findOrFail($id);
-        $category->delete();
-        header("Location: /categories");
+        $booking = Booking::findOrFail($id);
+        $booking->delete();
+        header("Location: /bookings");
     }
 
 }

@@ -7,7 +7,7 @@ use \Core\View;
 use \Core\Controller;
 
 /**
- * Home controller
+ * User controller
  */
 class UserController extends Controller
 {
