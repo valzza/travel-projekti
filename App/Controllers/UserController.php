@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use \Core\View;
 use \Core\Controller;
 
