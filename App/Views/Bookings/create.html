@@ -1,0 +1,48 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Booking Create{% endblock %}
+
+    {% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Add Booking</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-2">Add Booking</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="post" action="/bookings-store">
+                            <div class="form-group">
+                                <label class="small mb-1">Where To :</label>
+                                <input class="form-control py-4" name="where_to" type="text" placeholder="Enter where"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1">How Many :</label>
+                                <input class="form-control py-4" name="how_many" type="text" placeholder="Enter how many"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1">Check In :</label>
+                                <input class="form-control py-4" name="check_in" type="text" placeholder="Enter check in"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1">Check Out :</label>
+                                <input class="form-control py-4" name="check_out" type="text" placeholder="Enter check out"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1">Details :</label>
+                                <input class="form-control py-4" name="details" type="text" placeholder="Enter details"/>
+                            </div>
+
+                            <input class="btn btn-primary" value="Create Booking" type="submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

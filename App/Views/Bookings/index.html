@@ -1,0 +1,47 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Library | Bookings{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Bookings</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Bookings</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Where To</th>
+                            <th>How Many</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.where_to }}</td>
+                            <td>{{ booking.how_many }}</td>
+                            <td>{{ booking.check_in }}</td>
+                            <td>{{ booking.check_out }}</td>
+                            <td>{{ booking.details }}</td>
+                            <td><a href="/bookings-edit?id={{booking.id}}">Edit</a></td>
+                            <td><a href="/bookings-delete?id={{booking.id}}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
