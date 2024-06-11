@@ -27,7 +27,10 @@ class ProportiesController extends Controller
     public function store()
     {
         $proporties = new Proporties();
-        $proporties->name = $_POST['name'];
+        $proporties->title = $_POST['title'];
+        $proporties->description = $_POST['description'];
+        $proporties->location = $_POST['location'];
+        $proporties->price_per_night = $_POST['price_per_night'];
         $proporties->save();
         header("Location: /proporties");
     }
@@ -49,7 +52,10 @@ class ProportiesController extends Controller
     {
         $id = $_POST['id'];
         $proporties = Proporties::findOrFail($id);
-        $proporties->name = $_POST['name'];
+        $proporties->title = $_POST['title'];
+        $proporties->description = $_POST['description'];
+        $proporties->location = $_POST['location'];
+        $proporties->price_per_night = $_POST['price_per_night'];
         $proporties->save();
         header("Location: /proporties");
     }
