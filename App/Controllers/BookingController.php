@@ -14,7 +14,7 @@ class BookingController extends Controller
 
     public function index()
     {
-        $bookings = Booking::orderBy('id', 'desc')->get();
+        $bookings = Booking::orderBy('id', 'desc')->with('user')->get();
 
         View::renderTemplate('Bookings/index.html', ['bookings' => $bookings]);
     }

@@ -21,6 +21,7 @@
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th>Details</th>
+                            <th>User</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -33,6 +34,11 @@
                             <td>{{ booking.check_in }}</td>
                             <td>{{ booking.check_out }}</td>
                             <td>{{ booking.details }}</td>
+                            <td>
+                                {% for user in booking.users %}
+                                {{ user.first_name }} {{ user.last_name }} <br>
+                                {% endfor %}
+                            </td>
                             <td><a href="/bookings-edit?id={{booking.id}}">Edit</a></td>
                             <td>
                                 <form method='post' action='/bookings-delete' onsubmit="return confirmSubmit();">

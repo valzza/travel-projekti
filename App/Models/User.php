@@ -10,7 +10,7 @@ class User extends Model
         return $this->hasMany(Booking::class);
     }
 
-    public function proporties()
+    public function properties()
     {
         return $this->hasMany(Property::class);
     }

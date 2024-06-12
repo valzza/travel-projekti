@@ -14,7 +14,7 @@ class PropertiesController extends Controller
 
     public function index()
     {
-        $properties = Property::orderBy('id', 'desc')->get();
+        $properties = Property::orderBy('id', 'desc')->with('user')->get();
 
         View::renderTemplate('Properties/index.html', ['properties' => $properties]);
     }
