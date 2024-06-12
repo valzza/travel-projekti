@@ -35,6 +35,11 @@ class BookingController extends Controller
 
     public function store()
     {
+
+    if (!isset($_SESSION['user_id'])) {
+        die('User not logged in');
+    }
+
         $bookings = new Booking();
         $bookings->user_id = $_SESSION['user_id'];
         $bookings->where_to = $_POST['where_to'];
