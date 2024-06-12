@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
     public function destroy()
     {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $category = Category::findOrFail($id);
         $category->delete();
         header("Location: /categories");

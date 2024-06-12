@@ -26,11 +26,18 @@ class BookingController extends Controller
 
     public function store()
     {
+        // session_start();
+
+        // if (!isset($_SESSION['user_id'])) {
+        //     die('User not logged in');
+        // }
         $bookings = new Booking();
+        $booking->user_id = 0;//$_SESSION['user_id'];
         $bookings->where_to = $_POST['where_to'];
         $bookings->how_many = $_POST['how_many'];
         $bookings->check_in = $_POST['check_in'];
         $bookings->check_out = $_POST['check_out'];
+        $bookings->details = $_POST['details'];
         $bookings->save();
         header("Location: /bookings");
     }
@@ -43,7 +50,7 @@ class BookingController extends Controller
     public function edit()
     {
         $id = $_GET['id'];
-        $bookings = Booking::findOrFail($id);
+        $booking = Booking::findOrFail($id);
 
         View::renderTemplate('Bookings/edit.html',['booking' => $booking]);
     }
@@ -56,13 +63,14 @@ class BookingController extends Controller
         $booking->how_many = $_POST['how_many'];
         $booking->check_in = $_POST['check_in'];
         $booking->check_out = $_POST['check_out'];
+        $booking->details = $_POST['details'];
         $booking->save();
         header("Location: /bookings");
     }
 
     public function destroy()
     {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $booking = Booking::findOrFail($id);
         $booking->delete();
         header("Location: /bookings");

@@ -16,20 +16,24 @@
                     <div class="card-body">
                         <form method="post" action="/bookings-store">
                             <div class="form-group">
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                                <!-- <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"> -->
+                            </div>
+                            <div class="form-group">
                                 <label class="small mb-1">Where To :</label>
                                 <input class="form-control py-4" name="where_to" type="text" placeholder="Enter where"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">How Many :</label>
-                                <input class="form-control py-4" name="how_many" type="text" placeholder="Enter how many"/>
+                                <input class="form-control py-4" name="how_many" type="number" placeholder="Enter how many"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Check In :</label>
-                                <input class="form-control py-4" name="check_in" type="text" placeholder="Enter check in"/>
+                                <input class="form-control py-4" name="check_in" type="date" placeholder="Enter check in"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Check Out :</label>
-                                <input class="form-control py-4" name="check_out" type="text" placeholder="Enter check out"/>
+                                <input class="form-control py-4" name="check_out" type="date" placeholder="Enter check out"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Details :</label>

@@ -62,7 +62,7 @@ class PropertiesController extends Controller
 
     public function destroy()
     {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $properties = Property::findOrFail($id);
         $properties->delete();
         header("Location: /properties");

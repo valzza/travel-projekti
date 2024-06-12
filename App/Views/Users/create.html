@@ -32,16 +32,21 @@
                                 <input class="form-control py-4" name="phone" type="text" placeholder="Enter phone"/>
                             </div>
                             <div class="form-group">
-                                <label class="small mb-1">Status :</label>
-                                <input class="form-control py-4" name="status" type="text" placeholder="Enter status"/>
-                            </div>
-                            <div class="form-group">
                                 <label class="small mb-1">Email :</label>
                                 <input class="form-control py-4" name="email" type="text" placeholder="Enter email"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Password :</label>
-                                <input class="form-control py-4" name="password" type="text" placeholder="Enter password"/>
+                                <input class="form-control py-4" name="password" type="password" placeholder="Enter password"/>
+                            </div>
+                            <div class="form-group d-flex flex-column">
+                                <label class="small mb-1" for="index_no">Status</label>
+                                <div class="">
+                                    <input class="" name="status" id="status_active" type="radio" checked value="1"/>
+                                    <label class="small mb-1" for="index_no">Active</label>
+                                    <input class="" name="status" id="status_inactive" type="radio" value="0"/>
+                                    <label class="small mb-1" for="index_no">Inactive</label>
+                                </div>
                             </div>
 
                             <input class="btn btn-primary" value="Create User" type="submit" />

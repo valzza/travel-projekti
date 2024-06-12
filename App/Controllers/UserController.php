@@ -67,7 +67,7 @@ class UserController extends Controller
 
     public function destroy()
     {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $user = User::findOrFail($id);
         $user->delete();
         header("Location: /users");

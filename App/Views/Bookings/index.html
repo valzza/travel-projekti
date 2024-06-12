@@ -35,14 +35,12 @@
                             <td>{{ booking.check_out }}</td>
                             <td>{{ booking.details }}</td>
                             <td>
-                                {% for user in booking.users %}
-                                {{ user.first_name }} {{ user.last_name }} <br>
-                                {% endfor %}
+                                {{ booking.user.first_name }} {{ booking.user.last_name }} <br>
                             </td>
                             <td><a href="/bookings-edit?id={{booking.id}}">Edit</a></td>
                             <td>
                                 <form method='post' action='/bookings-delete' onsubmit="return confirmSubmit();">
-                                    <input type='hidden' name='id'value='{{booking.id}}'>
+                                    <input type='hidden' name='id' value='{{booking.id}}'>
                                     <input type='submit' value='Delete'>
                                 </form>
                             </td>

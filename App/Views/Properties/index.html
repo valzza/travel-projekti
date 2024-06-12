@@ -33,7 +33,7 @@
                             <td>{{ property.location }}</td>
                             <td>{{ property.price_per_night }}</td>
                             <td>
-                                {{ user.first_name }} {{ user.last_name }} <br>
+                                {{ property.user.first_name }} {{ property.user.last_name }} <br>
                             </td>
                             <td><a href="/properties-edit?id={{property.id}}">Edit</a></td>
                             <!-- <td><a href="/properties-delete?id={{property.id}}">Delete</a></td> -->
