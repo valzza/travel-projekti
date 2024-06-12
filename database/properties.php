@@ -4,7 +4,7 @@ require "../Bootstrap.php";
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-Capsule::schema()->create('proporties', function ($table) {
+Capsule::schema()->create('properties', function ($table) {
     $table->id();
     $table->integer('user_id');
     $table->string('title', 30);

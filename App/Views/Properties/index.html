@@ -1,13 +1,13 @@
 {% extends "layout/appLayout.html" %}
 
-{% block title %}Library | Proporties{% endblock %}
+{% block title %}Library | Properties{% endblock %}
 
 {% block content %}
 <main>
     <div class="container-fluid">
-        <h1 class="mt-4">Proporties</h1>
+        <h1 class="mt-4">Properties</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Proporties</li>
+            <li class="breadcrumb-item active">Properties</li>
         </ol>
 
         <div class="row">
@@ -25,14 +25,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for property in proporties %}
+                        {% for property in properties %}
                         <tr>
                             <td>{{ property.title }}</td>
                             <td>{{ property.description }}</td>
                             <td>{{ property.location }}</td>
                             <td>{{ property.price_per_night }}</td>
-                            <td><a href="/proporties-edit?id={{property.id}}">Edit</a></td>
-                            <td><a href="/proporties-delete?id={{property.id}}">Delete</a></td>
+                            <td><a href="/properties-edit?id={{property.id}}">Edit</a></td>
+                            <td><a href="/properties-delete?id={{property.id}}">Delete</a></td>
                         </tr>
                         {% endfor %}
                         </tbody>
