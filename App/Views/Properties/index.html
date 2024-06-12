@@ -35,8 +35,10 @@
                             <td>
                                 {{ property.user.first_name }} {{ property.user.last_name }} <br>
                             </td>
-                            <td><a href="/properties-edit?id={{property.id}}">Edit</a></td>
-                            <!-- <td><a href="/properties-delete?id={{property.id}}">Delete</a></td> -->
+                            <td> <form method='get' action='/properties-edit'>
+                                <input type='hidden' name='id' value='{{property.id}}'>
+                                <input type='submit' value='Edit'>
+                            </form></td>
                             <td>
                                 <form method='post' action='/properties-delete' onsubmit="return confirmSubmit();">
                                     <input type='hidden' name='id' value='{{property.id}}'>

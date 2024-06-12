@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Helper\Session;
 use App\Models\Property;
+use App\Models\User;
 use \Core\View;
 use \Core\Controller;
 
@@ -12,6 +14,13 @@ use \Core\Controller;
 class PropertiesController extends Controller
 {
 
+    public function __construct()
+    {
+        $session = Session::getInstance();
+        if (!$session->isSignedIn()){
+            header('Location: /login');
+        }
+    }
     public function index()
     {
         $properties = Property::orderBy('id', 'desc')->with('user')->get();
@@ -27,6 +36,7 @@ class PropertiesController extends Controller
     public function store()
     {
         $properties = new Property();
+        $properties->user_id = $_SESSION['user_id'];
         $properties->title = $_POST['title'];
         $properties->description = $_POST['description'];
         $properties->location = $_POST['location'];

@@ -10,6 +10,10 @@ $router->add('', ['controller' => 'HomeController', 'action' => 'index']);
 $router->add('index', ['controller' => 'HomeController', 'action' => 'index_home']);
 
 
+$router->add('login', ['controller' => 'AuthController', 'action' => 'loginForm']);
+$router->add('login-store', ['controller' => 'AuthController', 'action' => 'loginStore']);
+$router->add('logout', ['controller' => 'AuthController', 'action' => 'logout']);
+
 $router->add('categories', ['controller' => 'CategoryController', 'action' => 'index']);
 $router->add('categories-create', ['controller' => 'CategoryController', 'action' => 'create']);
 $router->add('categories-store', ['controller' => 'CategoryController', 'action' => 'store']);

@@ -1,0 +1,255 @@
+@font-face {
+    font-family: Mandali;
+    src: url(../fonts/Mandali-Regular.ttf);
+}
+@font-face {
+    font-family: IntegralCF;
+    src: url(../fonts/Fontspring-integralcf-regular.otf);
+}
+@font-face {
+    font-family: Shanti;
+    src: url(../fonts/Shanti-Regular.ttf);
+}
+@font-face {
+    font-family: Kinetica;
+    src: url("../fonts/Kinetica-Light.otf");
+}
+@font-face {
+    font-family: inter-semibold;
+    src: url("../fonts/Inter-SemiBold.ttf");
+}
+@font-face {
+    font-family: inter;
+    src: url("../fonts/Inter-Regular.ttf");
+}
+@font-face {
+    font-family: inter-light;
+    src: url("../fonts/Inter-Light.ttf");
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat-light;
+    src: url(../fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: Causten-Light;
+    src: url("../fonts/Causten-Light.otf");
+}
+
+@font-face {
+    font-family: Causten-SemiBold;
+    src: url("../fonts/Causten-SemiBold.otf");
+}
+
+html{
+    height: 100%;
+}
+body{
+    background-color: #293b5f;
+    display: flex;
+    height: 99%;
+
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    width: 70%;
+    height: 80vh;
+    background-color: rgb(223, 217, 217);
+    display: flex;
+}
+.left-container{
+    width: 35%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    /* align-items: flex-start; */
+    justify-content: center;
+    position: relative;
+    align-items: center;
+
+}
+.left-container img{
+    width: 120%;
+    height: 100%;
+    position: relative;
+    filter: brightness(40%);
+}
+.image-caption h4{
+    color: white;
+    font-family: Causten-SemiBold;
+    font-size: 50px;
+}
+.image-caption h5{
+    margin-top: -15%;
+    color: white;
+    font-family: Causten-light;
+    font-size: 30px;
+
+
+}
+.image-caption{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+}
+
+.left-container p{
+    position: absolute;
+    align-self: flex-end;
+    color: #FDFDFD;
+    font-family: Causten-light;
+    font-size: 20px;
+
+
+}
+
+.right-container{
+    width: 65%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.header-container{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 60%;
+    align-self: center;
+    font-family: Causten-SemiBold;
+    font-size: 25px;
+    color: #203C61;
+
+}
+.double-input-container{
+    height: 10%;
+}
+.single-input-container{
+    height: 10%;
+}
+.button-container{
+    margin-top: 2.5%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.double-input-container{
+    display: flex;
+    justify-content: space-around;
+}
+.double-input-container input{
+    width: 45%;
+    height: 40px;
+    border: none;
+    background-color: #F4F5F8;
+    border-radius: 12px;
+    font-family: Causten-Light;
+    font-size: 25px;
+    color: black;
+    text-indent: 10px;
+
+}
+
+select{
+    width: 45%;
+    height: 40px;
+    border: none;
+    background-color: #F4F5F8;
+    border-radius: 12px;
+    font-family: Causten-Light;
+    font-size: 25px;
+    color: black;
+    text-indent: 10px;
+}
+
+.single-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-input-container input{
+    width: 95%;
+    height: 40px;
+    border: none;
+    background-color: #F4F5F8;
+    border-radius: 12px;
+    font-family: Causten-Light;
+    font-size: 25px;
+    color: black;
+    line-height: 0px;
+    text-indent: 10px;
+
+}
+.double-input-container input::placeholder{
+    color: black;
+}
+
+.double-input-container input:focus{
+    border: none;
+    outline: none;
+    
+}
+
+.single-input-container input::placeholder{
+    color: black;
+}
+
+.single-input-container input:focus{
+    border: none;
+    outline: none;
+    
+}
+.button-container input{
+    padding: 12px 30px;
+    border: none;
+    background-color: #293b5f;
+    font-family: Causten-SemiBold;
+    font-size: 25px;
+    color: white;
+    border-radius: 10px;
+}
+.button-container input:hover{
+    cursor: pointer;
+
+}
+.button-container p {
+    font-family: Causten-Light;
+    font-size: 20px;
+}
+.button-container span{
+    font-family: Causten-SemiBold;
+    color: #1877F2;
+}
+.button-container span:hover{
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 15%;
+}
+.footer-container{
+    width: 100%;
+    height: 115px;
+    background-color: #1e2024;
+    display: flex;
+    justify-content: center;
+}
+
+.img-class-footer{
+    width: 200px;
+}
+
+.msg{
+    background-color: #f21818;
+    color: #FFF;
+    padding-left: 3px;
+    font-size: 1em;
+}

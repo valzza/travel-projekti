@@ -25,7 +25,10 @@
                         {% for category in categories %}
                         <tr>
                             <td>{{ category.name }}</td>
-                            <td><a href="/categories-edit?id={{category.id}}">Edit</a></td>
+                            <td> <form method='get' action='/categories-edit'>
+                                <input type='hidden' name='id' value='{{category.id}}'>
+                                <input type='submit' value='Edit'>
+                            </form></td>
                             <td>
                                 <form method='post' action='/categories-delete' onsubmit="return confirmSubmit();">
                                     <input type='hidden' name='id'value='{{category.id}}'>

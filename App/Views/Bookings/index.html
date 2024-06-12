@@ -34,10 +34,12 @@
                             <td>{{ booking.check_in }}</td>
                             <td>{{ booking.check_out }}</td>
                             <td>{{ booking.details }}</td>
-                            <td>
-                                {{ booking.user.first_name }} {{ booking.user.last_name }} <br>
+                            <td>{{ booking.user.first_name }} {{ booking.user.last_name }} <br>
                             </td>
-                            <td><a href="/bookings-edit?id={{booking.id}}">Edit</a></td>
+                            <td> <form method='get' action='/bookings-edit'>
+                                <input type='hidden' name='id' value='{{booking.id}}'>
+                                <input type='submit' value='Edit'>
+                            </form></td>
                             <td>
                                 <form method='post' action='/bookings-delete' onsubmit="return confirmSubmit();">
                                     <input type='hidden' name='id' value='{{booking.id}}'>

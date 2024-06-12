@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Helper\Session;
 use App\Models\Booking;
+use App\Models\User;
 use \Core\View;
 use \Core\Controller;
 
@@ -12,10 +14,17 @@ use \Core\Controller;
 class BookingController extends Controller
 {
 
+    public function __construct()
+    {
+        $session = Session::getInstance();
+        if (!$session->isSignedIn()){
+            header('Location: /login');
+        }
+    }
+
     public function index()
     {
         $bookings = Booking::orderBy('id', 'desc')->with('user')->get();
-
         View::renderTemplate('Bookings/index.html', ['bookings' => $bookings]);
     }
 
@@ -26,13 +35,8 @@ class BookingController extends Controller
 
     public function store()
     {
-        // session_start();
-
-        // if (!isset($_SESSION['user_id'])) {
-        //     die('User not logged in');
-        // }
         $bookings = new Booking();
-        $booking->user_id = 0;//$_SESSION['user_id'];
+        $bookings->user_id = $_SESSION['user_id'];
         $bookings->where_to = $_POST['where_to'];
         $bookings->how_many = $_POST['how_many'];
         $bookings->check_in = $_POST['check_in'];

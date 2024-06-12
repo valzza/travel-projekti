@@ -33,7 +33,10 @@
                             <td>{{ user.address }}</td>
                             <td>{{ user.phone }}</td>
                             <td>{{ user.email }}</td>
-                            <td><a href="/users-edit?id={{user.id}}">Edit</a></td>
+                            <td> <form method='get' action='/users-edit'>
+                                <input type='hidden' name='id' value='{{user.id}}'>
+                                <input type='submit' value='Edit'>
+                            </form></td>
                             <td>
                                 <form method='post' action='/users-delete' onsubmit="return confirmSubmit();">
                                     <input type='hidden' name='id' value='{{user.id}}'>
