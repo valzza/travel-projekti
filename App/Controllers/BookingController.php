@@ -52,7 +52,10 @@ class BookingController extends Controller
     {
         $id = $_POST['id'];
         $booking = Booking::findOrFail($id);
-        $booking->name = $_POST['name'];
+        $booking->where_to = $_POST['where_to'];
+        $booking->how_many = $_POST['how_many'];
+        $booking->check_in = $_POST['check_in'];
+        $booking->check_out = $_POST['check_out'];
         $booking->save();
         header("Location: /bookings");
     }
